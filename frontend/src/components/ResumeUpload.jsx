@@ -35,7 +35,7 @@ const ResumeUpload = ({ onUploadSuccess }) => {
     setError('');
 
     try {
-      // ✅ Get token from localStorage
+      // Get token from localStorage
       const user = JSON.parse(localStorage.getItem('user') || '{}');
       const token = user?.token;
 
@@ -45,13 +45,13 @@ const ResumeUpload = ({ onUploadSuccess }) => {
         return;
       }
 
-      // ✅ Build FormData with exact field name 'resume'
+      // Build FormData with exact field name 'resume'
       const formData = new FormData();
       formData.append('resume', file);
 
       console.log('📤 Uploading file:', file.name, file.type, file.size);
 
-      // ✅ Use axios directly with correct headers
+      // Use axios directly with correct headers
       const response = await axios.post(
         'http://localhost:5000/api/resume/upload',
         formData,

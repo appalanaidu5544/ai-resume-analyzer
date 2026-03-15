@@ -8,14 +8,14 @@ import Dashboard from './pages/Dashboard.jsx';
 import ResumeAnalysis from './pages/ResumeAnalysis.jsx';
 import './styles.css';
 
-// Protected route wrapper
+
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) return <div className="loading-page"><div className="spinner"></div></div>;
   return user ? children : <Navigate to="/login" replace />;
 };
 
-// Public route - redirect to dashboard if already logged in
+
 const PublicRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) return <div className="loading-page"><div className="spinner"></div></div>;

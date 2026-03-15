@@ -1,9 +1,9 @@
 const pdfParse = require('pdf-parse');
 const fs = require('fs');
 
-/**
- * Extract text from PDF file path
- */
+
+// Extract text from PDF file path
+
 const extractTextFromPDF = async (filePath) => {
     try {
         const dataBuffer = fs.readFileSync(filePath);
@@ -14,9 +14,9 @@ const extractTextFromPDF = async (filePath) => {
     }
 };
 
-/**
- * Extract text from PDF buffer (memory storage)
- */
+
+// Extract text from PDF buffer (memory storage)
+
 const extractTextFromBuffer = async (buffer) => {
     try {
         const data = await pdfParse(buffer);
@@ -26,9 +26,8 @@ const extractTextFromBuffer = async (buffer) => {
     }
 };
 
-/**
- * Clean extracted text
- */
+// Clean extracted text
+
 const cleanText = (text) => {
     return text
         .replace(/\s+/g, ' ')
