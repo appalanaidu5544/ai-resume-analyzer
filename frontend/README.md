@@ -1,16 +1,109 @@
-# React + Vite
+# AI Resume Analyzer Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for the AI Resume Analyzer project built using **React and Vite**.
 
-Currently, two official plugins are available:
+This interface allows users to register, upload resumes, view AI analysis results, and receive job recommendations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React (Vite)
+* React Router
+* Axios
+* CSS
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+* User Registration
+* User Login
+* Resume Upload UI
+* Dashboard
+* Resume Analysis Results
+* Job Suggestions
+
+---
+
+## Project Structure
+
+```
+src
+│
+├── components
+│   ├── Navbar.jsx
+│   ├── ResumeUpload.jsx
+│   ├── ResumeCard.jsx
+│   └── JobSuggestions.jsx
+│
+├── pages
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   ├── Dashboard.jsx
+│   └── ResumeAnalysis.jsx
+│
+├── services
+│   └── api.js
+│
+├── context
+│   └── AuthContext.jsx
+│
+├── utils
+│   └── auth.js
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## Installation
+
+```
+npm install
+```
+
+Run development server
+
+```
+npm run dev
+```
+
+Application runs on
+
+```
+http://localhost:5173
+```
+
+---
+
+## Environment Variables
+
+Create `.env`
+
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+---
+
+## API Integration
+
+Axios instance is configured in
+
+```
+src/services/api.js
+```
+
+Example
+
+```
+export const registerUser = (data) => api.post('/auth/register', data);
+```
+
+---
+
+## Author
+
+Appalanaidu Routhu
